@@ -1,7 +1,7 @@
 import json
 import streamlit as st
 from cv_parser import extract_text_from_pdf
-from langchain_ollama import ChatOllama
+from langchain_groq import ChatGroq
 from langchain_core.prompts import ChatPromptTemplate
 
 # Page Config (Centered Single-Page Layout, No Sidebar)
@@ -140,12 +140,10 @@ st.markdown("""
 # Cache LLM in RAM for speed
 @st.cache_resource
 def load_llm():
-    return ChatOllama(
-        model="llama3.2:1b",
+    return ChatGroq(
+        model="llama-3.3-70b-versatile",
         temperature=0.2,
-        format="json",
-        num_ctx=2048,
-        keep_alive="60m"
+        groq_api_key=st.secrets["GROQ_API_KEY"]
     )
 
 # 1. HERO HEADER SECTION
