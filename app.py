@@ -143,7 +143,8 @@ def load_llm():
     return ChatGroq(
         model="llama-3.3-70b-versatile",
         temperature=0.2,
-        groq_api_key=st.secrets["GROQ_API_KEY"]
+        groq_api_key=st.secrets["GROQ_API_KEY"],
+        model_kwargs={"response_format": {"type": "json_object"}}
     )
 
 # 1. HERO HEADER SECTION
