@@ -143,8 +143,8 @@ def load_llm():
     return ChatGroq(
         model="qwen/qwen3.6-27b",
         temperature=0.2,
-        groq_api_key=st.secrets["GROQ_API_KEY"],
-        model_kwargs={"response_format": {"type": "json_object"}}
+        groq_api_key=st.secrets["GROQ_API_KEY"]
+    
     )
 # 1. HERO HEADER SECTION
 st.markdown("""
