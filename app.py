@@ -141,7 +141,7 @@ st.markdown("""
 @st.cache_resource
 def load_llm():
     return ChatGroq(
-        model="mixtral-8x7b-32768",
+        model="llama-3.1-8b-instant",
         temperature=0.2,
         groq_api_key=st.secrets["GROQ_API_KEY"],
         model_kwargs={"response_format": {"type": "json_object"}}
