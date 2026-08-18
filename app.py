@@ -141,7 +141,7 @@ st.markdown("""
 @st.cache_resource
 def load_llm():
     return ChatGroq(
-        model="qwen/qwen3.6-27b",
+        model="openai/gpt-oss-120b",
         temperature=0.2,
         groq_api_key=st.secrets["GROQ_API_KEY"]
     
