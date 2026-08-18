@@ -141,12 +141,11 @@ st.markdown("""
 @st.cache_resource
 def load_llm():
     return ChatGroq(
-        model="llama-3.3-70b-versatile",
+        model="llama3-70b-8192",
         temperature=0.2,
         groq_api_key=st.secrets["GROQ_API_KEY"],
         model_kwargs={"response_format": {"type": "json_object"}}
     )
-
 # 1. HERO HEADER SECTION
 st.markdown("""
     <div class="hero-container">
